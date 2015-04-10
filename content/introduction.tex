@@ -3,15 +3,14 @@
 % Current map making methods
 % Current, closed, localization/navigation solutions
 
-In this section, a brief overview of the currently available commercial solutions in regards to indoor mapping and localization will be presented, without going into the inner workings.
+People spend most of the time indoors, yet the most well-versed mapping is only usable outside.
+This includes both creation of maps and localization/navigation.
 
-Google Maps Indoor already provides a publicly available method of making indoor maps (adding them to Google Maps), by uploading and fitting a schema on top of Google Maps \cite{google_maps_indoor}.
-Additionally, Cartographer was recently introduced; a backpack with sensor equipment using SLAM (Simultaneous Localization and Mapping) to continuously map while moving through a venue \cite{cartographer}.
-The method for localization is a fused one, using sensors, GPS, wifi, and selected level \cite[Slide 45]{indoor_maps_google_slides}.
+Google Project Ground Truth\cite{googleio_ground_truth} already cover most of the outdoors, and are now focusing on moving indoors \cite{googleio_indoor_maps}\cite{indoor_maps_google_slides}.
+Methods of creating the maps include uploading and fitting of custom floor plans on top of Google Maps.
+Another method, recently announced by Google, is the usage of a sensor-backpack using SLAM, called Cartographer \cite{cartographer}.
+Other mention-worthy public solutions that are also available for creating indoor maps are Bing Maps\cite{bingmaps} and Micello\cite{micello}.
 
-Micello, similar to Google, accepts floor plans to generate venue maps \cite{micello}.
-Micello provides navigation within a venue, however, it does not provide any method of localization, while it is compatible with several localization providers.
+What is missing now, is proper indoor localization, to use for tracking and navigation.
+GPS is both effective and efficient outdoors, however, it is near unusable in the indoors, as both availability and precision are not suited for indoor usage.
 
-Connexient provides professional indoor mapping and navigation solutions.
-While Connexient does all the initial work with the creation of the map, the plan is to provide tools to keep them updated in-house \cite{connexient_indoor_map}.
-Localization is handled by a fusion of BLE (Bluetooth Low Energy) beacons, RSS (Received Signal Strength), compass, and accelerometer \cite{connexient_indoor_pos}.
