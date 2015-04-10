@@ -1,0 +1,28 @@
+\paragraph{Triangulation}
+Triangulation is used on a number of distance measurements to a number of reference points. 
+Typically the distance is measured using the signal strength between tag and reader or the time of arrival of the signal.
+A model is then used to map the distance measurements to a 2D or 3D position of the tag.\cite{rfidreview}
+
+\paragraph{SpotON}
+An implementation of triangulation is the SpotON system\cite{spoton}.
+SpotON uses several basestation that are all connected to a central server.
+The server aggregates the received positions, triangulates the data and sends the resulting position to clients. \cite{spoton}
+
+The algorithm used for triangulating the positions is a hillclimbing algorithm as presented in section 3.3.1 of \citet{spoton}.
+The algorithm starts from a arbitrary position and searches for the position by calculating the theoretical signal strengths for adjacent positions.
+These theoretical signal strengths are calculated with a modeled formula for each basestation based on empirical data.
+The theoretical signal strengths are then compared to the observed signal strengths, and the point with the smallest error is used as the next point of origin.
+The process is repeated until the point does not move \cite{spoton}.
+
+\paragraph{Results}
+The experiment performed in \citet{spoton} showed that there were some problems with accuracy, but they were primarily caused by the imprecise tags used.
+They had in mind to develop their own hardware in order to improve on this aspect.
+
+\paragraph{Criticism}
+This method of triangulation is dependent on the calibration of the model of each base station.
+It is therefore prone to errors when the environment changes.
+Moving the tag or even the surrounding objects will influence the precision of the calculations.
+
+Also the hillclimbing method can be a problem in big buildings or big rooms, if there is no way to provide a good guess for the initial position.
+Here short ranged RFID tags used for room partitioning could be used in order to have a reasonable starting point.
+
