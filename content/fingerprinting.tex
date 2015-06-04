@@ -1,0 +1,20 @@
+\subsubsection{Fingerprinting}\label{fingerprinting}
+This section is based on \citet{fingerprinting_slides} and \citet{fingerprinting}.
+Location fingerprinting is a positioning technique that measures the strength of different signals at a given position.
+This measurement is then the fingerprint for that location.
+
+This section will explain the two phases of fingerprinting and how they are stored.
+\paragraph{Offline phase}
+In the offline phase a site-survey is performed, where a radio map is being build.
+This means measuring the strength of the different signals at all points of interest and storing them in a radio map.
+A radio map is a database that contains received signal strength indicator(RSSI) values for different positions throughout a building.
+A position is represented by a triplet $(x,y,z)$ where $x$ and $y$ represent the 2-D coordinates and $y$ the height of the sensor that measures the signal.
+The signals are then stored for instance as a vector for each position.
+
+For instance if one is using WiFi for localization, when measuring a specific location the RSSI from each access point is saved and that is the fingerprint for that location.
+
+\paragraph{Online phase}
+The online phase consists of collecting the RSSI values from the client and look them up in the radio map and return the position.
+But most of the time the values collected from the client do not match any values on the radio map.
+For that one needs to use a position estimation method to get the best match.
+The simplest is to use the Nearest Neighbour algorithm, that will return the position with the shortest vector distance.
