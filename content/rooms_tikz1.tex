@@ -17,9 +17,15 @@
 \foreach \x in {0,...,4}{\foreach \y in {0,...,2}{
   \node[rfid] at (-11 + \x,3 - \y) {};
 }}
-\foreach \x in {0,...,4}{\foreach \y in {0,...,2}{
-  \node[rfid,fill=green] at (-5 + \x,3 - \y) {};
-}}
+\foreach \x in {0,...,2}{
+  \node[rfid,fill=green] at (-5 + \x * 2,3) {};
+}
+\foreach \x in {0,...,1}{
+  \node[rfid,fill=green] at (-4 + \x * 2,2) {};
+}
+\foreach \x in {0,...,2}{
+  \node[rfid,fill=green] at (-5 + \x * 2,1) {};
+}
 
 \node[rfid,fill=red] at (1.5,5.5) {};
 \node[rfid,fill=red] at (3,3.5) {};
