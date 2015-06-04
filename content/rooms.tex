@@ -1,5 +1,5 @@
-\subsubsection{Splitting into rooms}\label{rooms}
-This section describes a simple method of performing localization using radio-based hardware.
+\subsubsection{Proximity analysis}\label{rooms}
+This section describes a simple method (proximity analysis) of performing localization using radio-based hardware.
 The technique, as described in \citet[Section II.C Proximity]{wireless_survey}, works by determining if the item being located is within the range of one or more fixed antennas with known locations.
 If the item is within the range of a single antenna, its location is said to be that of the antenna.
 If the item is within the range of multiple antennas, its location is said to be that of the antenna with the greatest signal strength.
@@ -20,4 +20,23 @@ It might however be too expensive to provide all rooms with such a high density 
 Whenever the object being tracked is not in range of an antenna its location is unknown.
 Because of this only the last known location can be provided when location is queried.
 
+\paragraph{Splitting into rooms}
+Instead of using proximity analysis to determine the \textit{location} of an item, it could instead be used to determine the room in which the item is located.
+This method does not require a greater granularity than that which the method provides.
+In \cref{rooms:fig:rooms} the same set of rooms as in \cref{rooms:fig:cover} is fitted with only four antennas.
+The antennas are placed strategically at the doors between the rooms.
+Because of this they can be used to determine if the item travels from one room to another.
 
+\begin{figure}[h]
+\centering
+\input{content/rooms_tikz2}
+\caption{Covering doors between rooms with antennas}
+\label{rooms:fig:rooms}
+\end{figure}
+
+If an item first passes by $i_0$ and then $i_1$ we know that it has moved from $R_1$ to $R_2$ and likewise for the opposite direction.
+If the object only passes by a single antenna (e.g. $i_0$) and looses the connection again, we know that it remains in $R_1$.
+
+This method requires only knowledge about which room the item starts in to work.
+The accuracy within a room is very as it is reduced to \textit{''in the room or not in the room''}.
+However the system will always be able to correctly identify which room the object is located in, given that the initial room is known.
