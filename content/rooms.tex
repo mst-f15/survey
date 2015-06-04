@@ -1,0 +1,23 @@
+\subsubsection{Splitting into rooms}\label{rooms}
+This section describes a simple method of performing localization using radio-based hardware.
+The technique, as described in \citet[Section II.C Proximity]{wireless_survey}, works by determining if the item being located is within the range of one or more fixed antennas with known locations.
+If the item is within the range of a single antenna, its location is said to be that of the antenna.
+If the item is within the range of multiple antennas, its location is said to be that of the antenna with the greatest signal strength.
+
+In \cref{rooms:fig:cover} are three rooms $R_1$, $R_2$ and $R_3$ that are fitted with low range radio-based antennas.
+Rooms $R_1$ and $R_2$ have been fitted with antennas to allow for the localization whereas $R_3$ only has preexisting antennas.
+
+\begin{figure}[h]
+\centering
+\input{content/rooms_tikz1}
+\caption{Covering rooms with antennas}
+\label{rooms:fig:cover}
+\end{figure}
+
+It is clear that the precision of this method is directly related to the density of antennas, as the number of antennas is equal to the number of possible positions returned by the system.
+Thus the precision in rooms $R_1$ and $R_2$ is much greater than that in room $R_3$.
+It might however be too expensive to provide all rooms with such a high density of antennas and having few antennas provides very rough location information.
+Whenever the object being tracked is not in range of an antenna its location is unknown.
+Because of this only the last known location can be provided when location is queried.
+
+
