@@ -1,13 +1,8 @@
-Each building will have a unique indoor magnetic field, made unique by the construction (concrete, steel beams etc.) of each building.
+This section is based on \citet{geomagnetism} which present a positioning system using magnetic fields.
+
+Each building has a unique indoor magnetic field, made unique by the construction (concrete, steel beams etc.) of each building.
 Each individual location within a building will be affected by the aforementioned parameters and will therefore have a unique signature, depending on how the magnetic field is at that exact location.
 
-There have been very few attempts at utilizing these properties of the unique magnetic fields for a building, most noteworthy is \cite{geomagnetism}.
-In \citet{geomagnetism} experiments are carried out in two buildings with both a robot and a human-wearable compass-construction.
-Simple electric compasses are used for collecting data in a full 360 degree radius, while the least root mean square is calculated and nearest neighbour search is performed to match obtained location data with obtained map data.
-Initial results with the robot were $err_{mean} = 3.05 m$, $err_{sd} = 4.09 m$ and $err_{max} = 15 m$, where 70 \% of the predictions had errors less than 2 m.
-The second experiment with a human-worn device (with 4 compasses) yielded an overall result of $<1m$ error for 75.7 \% of the results.
-Two overall methods of improving the results are suggested, where one is adding an additional hardware component for assisting localization and the other being an added algorithmic.
-By adding this filtering (by limiting search space based on previous known location) a $<1 m$ accuracy for 86.6 \% of predictions is obtained.
-Finally experiments are carried out to show that the magnetic field changes little over time (very little noticeable difference with 6 months between) and that furniture and electrical equipment have little impact on measurements.
-
+A simple electric compass is used as sensor.
+Fingerprinting(see \cref{fingerprinting}) is used to make positioning possible.
 
