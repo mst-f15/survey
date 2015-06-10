@@ -2,14 +2,14 @@
 This section is based on \citet{fingerprinting_slides} and \citet{fingerprinting}.
 Location fingerprinting is a positioning technique that measures the strength of different signals at a given position.
 This measurement is then the fingerprint for that location.
+Locationing is now done by comparing the fingerprint of the client to the recorded fingerprints.
 
 This section will explain two phases (offline and online) of fingerprinting and how they are stored.
 \paragraph{Offline phase}
 In the offline phase a site-survey is performed, and a radio map is being built.
 This means measuring the strength of the different signals at all points of interest and storing them in a radio map.
 A radio map is a database that contains received signal strength indicator(RSSI) values for different positions throughout a building.
-A position is represented by a triplet $(x,y,z)$ where $x$ and $y$ represent the 2-D coordinates and $y$ the height of the sensor that measures the signal.
-The signals are then stored for instance as a vector for each position.
+The signals are then stored as a vector for each position.
 
 \paragraph{Online phase}
 The online phase consists of collecting the RSSI values from the client and looking them up in the radio map.

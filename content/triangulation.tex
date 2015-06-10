@@ -10,7 +10,6 @@ The server aggregates the received positions, triangulates the data and sends th
 
 The algorithm used for triangulating the positions is a hillclimbing algorithm as presented in \citet[Section 3.3.1]{spoton}.
 The algorithm starts from a arbitrary position and searches for the real position of the object by calculating the theoretical signal strengths for adjacent positions in a coordinate system.
-These theoretical signal strengths are calculated with a model for each base station based on empirical data.
 The theoretical signal strengths are then compared to the observed signal strengths, and the point with the smallest error is used as the next point of origin.
 This process is repeated until the point does not move \cite{spoton}.
 
@@ -20,5 +19,4 @@ It is therefore prone to errors when the environment changes.
 Moving the base stations or even the surrounding objects will influence the precision of the calculations.
 
 Also the hillclimbing method can be a problem in big buildings or big rooms, if there is no way to provide a good guess for the initial position.
-Here short ranged RFID tags used for room partitioning could be used in order to have a reasonable starting point.
 
